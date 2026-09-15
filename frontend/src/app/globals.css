@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #010102;
+    --surface-1: #0f1011;
+    --surface-2: #141516;
+    --hairline: #23252a;
+    --ink: #f7f8f8;
+    --ink-muted: #8a8f98;
+    --primary: #5e6ad2;
+  }
+
+  body {
+    background-color: #010102;
+    color: #f7f8f8;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Force tabular numbers for prices, metrics, dates, and SKUs */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #010102;
+}
+::-webkit-scrollbar-thumb {
+  background: #23252a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #34343a;
+}
