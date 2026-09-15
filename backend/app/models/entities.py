@@ -1,7 +1,7 @@
 import uuid
-from datetime import datetime
-from sqlalchemy import String, Integer, Boolean, DateTime, ForeignKey, Text, JSON
-from sqlalchemy.dialects.postgresql import UUID
+from datetime import datetime, timezone
+from sqlalchemy import String, Integer, Boolean, DateTime, ForeignKey, Text
+from sqlalchemy.dialects.postgresql import UUID, JSONB
 from sqlalchemy.orm import relationship, Mapped, mapped_column
 from app.core.database import Base
 
@@ -12,7 +12,7 @@ class Customer(Base):
     phone_number: Mapped[str] = mapped_column(String(30), unique=True, index=True, nullable=False)
     name: Mapped[str] = mapped_column(String(100), nullable=True)
     address: Mapped[str] = mapped_column(String(255), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
     
     orders = relationship("Order", back_populates="customer")
     conversations = relationship("Conversation", back_populates="customer")
@@ -37,8 +37,8 @@ class Order(Base):
     status: Mapped[str] = mapped_column(String(30), default="draft", index=True)
     total_amount: Mapped[int] = mapped_column(Integer, default=0)
     receipt_url: Mapped[str] = mapped_column(Text, nullable=True)
-    receipt_data: Mapped[dict] = mapped_column(JSON, nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    receipt_data: Mapped[dict] = mapped_column(JSONB, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
     
     customer = relationship("Customer", back_populates="orders")
     lines = relationship("OrderLine", back_populates="order", cascade="all, delete-orphan")
@@ -62,7 +62,7 @@ class Conversation(Base):
     id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     customer_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey("customers.id"), nullable=False)
     status: Mapped[str] = mapped_column(String(30), default="bot", index=True)
-    last_activity_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    last_activity_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
     
     customer = relationship("Customer", back_populates="conversations")
     messages = relationship("Message", back_populates="conversation", cascade="all, delete-orphan")
@@ -77,6 +77,6 @@ class Message(Base):
     content: Mapped[str] = mapped_column(Text, nullable=True)
     media_url: Mapped[str] = mapped_column(Text, nullable=True)
     media_type: Mapped[str] = mapped_column(String(20), default="text")
-    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None))
     
     conversation = relationship("Conversation", back_populates="messages")
