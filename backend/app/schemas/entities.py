@@ -56,3 +56,7 @@ class CustomerResponse(BaseModel):
     address: Optional[str] = None
     created_at: datetime
     model_config = ConfigDict(from_attributes=True)
+
+class ReceiptAttachRequest(BaseModel):
+    receipt_url: str
+    receipt_data: dict
