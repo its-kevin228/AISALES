@@ -86,35 +86,41 @@ export default function CashdeskPage() {
       </div>
 
       {/* KPI Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">Reçus à Vérifier</span>
-            <div className="text-xl font-semibold font-mono text-accent-amber tnum">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">Reçus à Vérifier</span>
+            <div className="text-2xl font-bold font-mono text-accent-amber tnum">
               {pendingReceipts.length}
             </div>
           </div>
-          <Clock className="w-5 h-5 text-accent-amber/60" />
+          <div className="w-10 h-10 rounded-lg bg-accent-amber/10 border border-accent-amber/20 flex items-center justify-center text-accent-amber">
+            <Clock className="w-5 h-5" />
+          </div>
         </div>
 
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">Encaissements Validés</span>
-            <div className="text-xl font-semibold font-mono text-accent-emerald tnum">
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">Encaissements Validés</span>
+            <div className="text-2xl font-bold font-mono text-accent-emerald tnum">
               {confirmedReceipts.length}
             </div>
           </div>
-          <ShieldCheck className="w-5 h-5 text-accent-emerald/60" />
+          <div className="w-10 h-10 rounded-lg bg-accent-emerald/10 border border-accent-emerald/20 flex items-center justify-center text-accent-emerald">
+            <ShieldCheck className="w-5 h-5" />
+          </div>
         </div>
 
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">Volume Encaissé Vérifié</span>
-            <div className="text-xl font-semibold font-mono text-ink tnum">
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">Volume Encaissé Vérifié</span>
+            <div className="text-2xl font-bold font-mono text-ink tnum">
               {formatFCFA(totalCollected)}
             </div>
           </div>
-          <CreditCard className="w-5 h-5 text-ink-subtle" />
+          <div className="w-10 h-10 rounded-lg bg-surface-2 border border-hairline flex items-center justify-center text-ink-subtle">
+            <CreditCard className="w-5 h-5" />
+          </div>
         </div>
       </div>
 

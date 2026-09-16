@@ -79,3 +79,13 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(var(--primary));
 }
+
+/* Hide scrollbar for clean horizontal tab rows */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+

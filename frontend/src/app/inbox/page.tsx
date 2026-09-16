@@ -137,7 +137,7 @@ export default function InboxPage() {
   };
 
   return (
-    <div className="h-[calc(100vh-6.5rem)] rounded border border-hairline overflow-hidden flex bg-surface-1">
+    <div className="h-[calc(100vh-11rem)] min-h-[640px] rounded-xl border border-hairline/90 shadow-xs overflow-hidden flex bg-surface-1">
       {/* Left List of Conversations */}
       <ConversationList
         conversations={conversations}

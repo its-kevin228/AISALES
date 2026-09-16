@@ -81,29 +81,35 @@ export default function OrdersPage() {
       </div>
 
       {/* KPI Summary Bar */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">En attente validation</span>
-            <div className="text-xl font-semibold font-mono text-accent-amber tnum">{pendingCount}</div>
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">En attente validation</span>
+            <div className="text-2xl font-bold font-mono text-accent-amber tnum">{pendingCount}</div>
           </div>
-          <Clock className="w-5 h-5 text-accent-amber/60" />
+          <div className="w-10 h-10 rounded-lg bg-accent-amber/10 border border-accent-amber/20 flex items-center justify-center text-accent-amber">
+            <Clock className="w-5 h-5" />
+          </div>
         </div>
 
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">Ventes Confirmées</span>
-            <div className="text-xl font-semibold font-mono text-accent-emerald tnum">{confirmedCount}</div>
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">Ventes Confirmées</span>
+            <div className="text-2xl font-bold font-mono text-accent-emerald tnum">{confirmedCount}</div>
           </div>
-          <CheckCircle2 className="w-5 h-5 text-accent-emerald/60" />
+          <div className="w-10 h-10 rounded-lg bg-accent-emerald/10 border border-accent-emerald/20 flex items-center justify-center text-accent-emerald">
+            <CheckCircle2 className="w-5 h-5" />
+          </div>
         </div>
 
-        <div className="p-3.5 rounded border border-hairline bg-surface-1 flex items-center justify-between">
-          <div className="space-y-0.5">
-            <span className="text-[11px] font-mono text-ink-subtle uppercase">Chiffre d'Affaires Confirmé</span>
-            <div className="text-xl font-semibold font-mono text-ink tnum">{formatFCFA(totalRevenue)}</div>
+        <div className="p-5 rounded-xl border border-hairline/90 bg-surface-1 shadow-xs flex items-center justify-between">
+          <div className="space-y-1">
+            <span className="text-xs font-mono text-ink-subtle uppercase tracking-wider">Chiffre d'Affaires Confirmé</span>
+            <div className="text-2xl font-bold font-mono text-ink tnum">{formatFCFA(totalRevenue)}</div>
           </div>
-          <DollarSign className="w-5 h-5 text-ink-subtle" />
+          <div className="w-10 h-10 rounded-lg bg-surface-2 border border-hairline flex items-center justify-center text-ink-subtle">
+            <DollarSign className="w-5 h-5" />
+          </div>
         </div>
       </div>
 
