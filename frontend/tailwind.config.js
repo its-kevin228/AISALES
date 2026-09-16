@@ -38,7 +38,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
+        sans: ["'Inter'", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "sans-serif"],
         mono: ["var(--font-mono)", "JetBrains Mono", "monospace"]
       }
     },

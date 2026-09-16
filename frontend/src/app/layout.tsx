@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className="dark">
-      <body className="bg-canvas text-ink antialiased flex h-screen overflow-hidden">
+      <body className="bg-canvas text-ink font-sans antialiased flex h-screen overflow-hidden">
         {/* Left Workbench Sidebar */}
         <Sidebar />
         
