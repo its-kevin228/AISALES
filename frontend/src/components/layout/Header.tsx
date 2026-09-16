@@ -1,6 +1,7 @@
 "use client";
 
 import { Search, Bell, User } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   return (
@@ -19,12 +20,15 @@ export function Header() {
       </div>
 
       {/* Right Controls & User Info */}
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
         {/* Live sync badge */}
-        <div className="flex items-center gap-2 px-2.5 py-1 rounded bg-accent-emerald/10 border border-accent-emerald/20 text-accent-emerald text-[11px] font-mono">
+        <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded bg-accent-emerald/10 border border-accent-emerald/20 text-accent-emerald text-[11px] font-mono">
           <span className="w-1.5 h-1.5 rounded-full bg-accent-emerald animate-pulse" />
           <span>Flux temps réel actif</span>
         </div>
+
+        {/* Theme Toggle (Dark / Light) */}
+        <ThemeToggle />
 
         {/* Notifications */}
         <button 

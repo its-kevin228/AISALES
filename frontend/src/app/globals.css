@@ -5,22 +5,50 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  /* Default: Dark Theme (Linear style) */
+  :root,
+  html.dark {
     --canvas: #010102;
     --surface-1: #0f1011;
     --surface-2: #141516;
+    --surface-3: #18191a;
+    --surface-4: #1e2022;
     --hairline: #23252a;
+    --hairline-strong: #34343a;
+    --hairline-subtle: #1c1d21;
     --ink: #f7f8f8;
     --ink-muted: #8a8f98;
+    --ink-subtle: #62666d;
     --primary: #5e6ad2;
+    --primary-hover: #828fff;
+    --primary-muted: rgba(94, 106, 210, 0.12);
+  }
+
+  /* Light Theme (Stripe / Vercel clean modern palette) */
+  html.light {
+    --canvas: #f8fafc;
+    --surface-1: #ffffff;
+    --surface-2: #f1f5f9;
+    --surface-3: #e2e8f0;
+    --surface-4: #cbd5e1;
+    --hairline: #e2e8f0;
+    --hairline-strong: #cbd5e1;
+    --hairline-subtle: #f8fafc;
+    --ink: #0f172a;
+    --ink-muted: #475569;
+    --ink-subtle: #94a3b8;
+    --primary: #4f46e5;
+    --primary-hover: #6366f1;
+    --primary-muted: rgba(79, 70, 229, 0.1);
   }
 
   body {
-    background-color: #010102;
-    color: #f7f8f8;
+    background-color: var(--canvas);
+    color: var(--ink);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   /* Force tabular numbers for prices, metrics, dates, and SKUs */
@@ -35,12 +63,12 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #010102;
+  background: var(--canvas);
 }
 ::-webkit-scrollbar-thumb {
-  background: #23252a;
+  background: var(--hairline-strong);
   border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #34343a;
+  background: var(--primary);
 }

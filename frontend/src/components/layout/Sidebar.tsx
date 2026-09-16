@@ -9,10 +9,10 @@ import {
   Boxes, 
   CreditCard, 
   ShieldCheck, 
-  Radio, 
-  Zap 
+  Radio 
 } from "lucide-react";
 import clsx from "clsx";
+import { OmniSalesLogo } from "./OmniSalesLogo";
 
 const NAV_ITEMS = [
   { label: "Vue d'Ensemble", href: "/", icon: LayoutDashboard },
@@ -28,14 +28,8 @@ export function Sidebar() {
   return (
     <aside className="w-64 border-r border-hairline bg-surface-1 flex flex-col h-screen select-none">
       {/* Brand Header */}
-      <div className="h-14 border-b border-hairline flex items-center px-4 gap-2.5">
-        <div className="w-7 h-7 rounded bg-primary/20 border border-primary/40 flex items-center justify-center text-primary">
-          <Zap className="w-4 h-4" />
-        </div>
-        <div className="flex flex-col">
-          <span className="font-semibold text-sm tracking-tight text-ink">omnisales-ai</span>
-          <span className="text-[10px] text-ink-muted uppercase tracking-wider font-mono">Commerce Copilot</span>
-        </div>
+      <div className="h-14 border-b border-hairline flex items-center px-4">
+        <OmniSalesLogo size={22} />
       </div>
 
       {/* Navigation Links */}

@@ -5,30 +5,31 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        canvas: "#010102",
+        canvas: "var(--canvas)",
         surface: {
-          1: "#0f1011",
-          2: "#141516",
-          3: "#18191a",
-          4: "#1e2022"
+          1: "var(--surface-1)",
+          2: "var(--surface-2)",
+          3: "var(--surface-3)",
+          4: "var(--surface-4)"
         },
         hairline: {
-          DEFAULT: "#23252a",
-          strong: "#34343a",
-          subtle: "#1c1d21"
+          DEFAULT: "var(--hairline)",
+          strong: "var(--hairline-strong)",
+          subtle: "var(--hairline-subtle)"
         },
         ink: {
-          DEFAULT: "#f7f8f8",
-          muted: "#8a8f98",
-          subtle: "#62666d"
+          DEFAULT: "var(--ink)",
+          muted: "var(--ink-muted)",
+          subtle: "var(--ink-subtle)"
         },
         primary: {
-          DEFAULT: "#5e6ad2",
-          hover: "#828fff",
-          muted: "rgba(94, 106, 210, 0.12)"
+          DEFAULT: "var(--primary)",
+          hover: "var(--primary-hover)",
+          muted: "var(--primary-muted)"
         },
         accent: {
           emerald: "#10b981",
