@@ -87,7 +87,7 @@ export function OrderDataTable({
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Rechercher numéro, client..."
-            className="w-full bg-surface-2/60 border border-hairline rounded pl-9 pr-3 py-1.5 text-xs text-ink placeholder:text-ink-subtle focus:outline-none focus:border-primary transition-colors"
+            className="w-full bg-surface-2 border border-hairline rounded-lg pl-9 pr-3 py-1.5 text-xs text-ink placeholder:text-ink-subtle focus:outline-none focus:border-primary transition-colors"
           />
         </div>
 

@@ -1,0 +1,47 @@
+<svg width="800" height="240" viewBox="0 0 800 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="omniGradFull" x1="20" y1="20" x2="220" y2="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#828fff" />
+      <stop offset="50%" stopColor="#5e6ad2" />
+      <stop offset="100%" stopColor="#4338ca" />
+    </linearGradient>
+    <linearGradient id="accentGradFull" x1="70" y1="70" x2="170" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#38bdf8" />
+      <stop offset="100%" stopColor="#10b981" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="250" y1="60" x2="550" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stopColor="#ffffff" />
+      <stop offset="100%" stopColor="#e2e8f0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Left Icon Mark -->
+  <g transform="translate(10, 10)">
+    <!-- Hexagonal Ring -->
+    <path
+      d="M110 20L190 66V154L110 200L30 154V66L110 20Z"
+      stroke="url(#omniGradFull)"
+      stroke-width="16"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Pulse Core -->
+    <path
+      d="M110 56L128 94L166 110L128 126L110 164L92 126L54 110L92 94L110 56Z"
+      fill="url(#omniGradFull)"
+    />
+    <!-- Center Dot -->
+    <circle cx="110" cy="110" r="16" fill="url(#accentGradFull)" />
+  </g>
+
+  <!-- Brand Typography -->
+  <!-- "OmniSales" -->
+  <text x="240" y="125" font-family="Inter, -apple-system, sans-serif" font-size="68" font-weight="800" fill="url(#textGrad)" letter-spacing="-1.5">OmniSales</text>
+
+  <!-- AI Badge -->
+  <rect x="600" y="70" width="80" height="42" rx="10" fill="#5e6ad2" fill-opacity="0.2" stroke="#5e6ad2" stroke-width="2.5" />
+  <text x="640" y="100" font-family="'JetBrains Mono', monospace, sans-serif" font-size="24" font-weight="800" fill="#828fff" text-anchor="middle" letter-spacing="1">AI</text>
+
+  <!-- Subtitle -->
+  <text x="244" y="165" font-family="'JetBrains Mono', monospace, sans-serif" font-size="19" font-weight="600" fill="#94a3b8" letter-spacing="4">COMMERCE COPILOT</text>
+</svg>
