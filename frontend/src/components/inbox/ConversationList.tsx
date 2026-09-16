@@ -93,7 +93,9 @@ export function ConversationList({ conversations, selectedId, onSelect }: Conver
               onClick={() => onSelect(item.id)}
               className={clsx(
                 "p-3 cursor-pointer transition-colors text-left flex flex-col gap-1.5",
-                isSelected ? "bg-surface-3/80 border-l-2 border-primary" : "hover:bg-surface-2/40"
+                isSelected 
+                  ? "bg-surface-2 shadow-xs text-ink" 
+                  : "hover:bg-surface-2/60 text-ink-muted"
               )}
             >
               <div className="flex items-center justify-between">

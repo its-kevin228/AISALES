@@ -188,7 +188,7 @@ export function OrderDataTable({
                       onClick={() => onSelectOrder(order)}
                       className={`cursor-pointer transition-colors ${
                         isSelected
-                          ? "bg-surface-2 border-l-2 border-primary"
+                          ? "bg-surface-2 font-medium"
                           : "hover:bg-surface-2/60"
                       }`}
                     >
